@@ -1,0 +1,14 @@
+names:
+  0: person
+  1: bicycle
+  2: car
+  3: motorcycle
+  4: bus
+  5: truck
+  6: fire
+path: /root/workspace/MS-AI_1000/v1.4.0-dev/../backup/dataset
+test: []
+train:
+- train.txt
+val:
+- val.txt

@@ -1,0 +1,9 @@
+names:
+  0: person
+  1: fire
+path: /root/workspace/MS-AI_1000/v1.2.1-dev/../backup/dataset
+test: []
+train:
+- train.txt
+val:
+- val.txt

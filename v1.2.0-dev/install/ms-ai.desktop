@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=MS-AI_1000_v1.2
+Type=Application
+Path=/home/ms-yang/workspace/MS-AI_1000/v1.2.0-dev/install
+Icon=/home/ms-yang/workspace/MS-AI_1000/v1.2.0-dev/front/ui/images/icon2.png
+Exec=sh ms-ai.sh
+Terminal=true

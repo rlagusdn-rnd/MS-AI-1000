@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <TITLE>MS VISION</TITLE>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=0.2, width=device-width" >
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="MICROSYSTEMS">
+    <link rel="shortcut icon" href="./images/icon2.png">
+    <script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+    <link rel="Stylesheet" type="text/css" href="./js/jquery-ui.min.css">
+    <script type="text/javascript" src="./js/jquery.timepicker.min.js"></script>
+    <link rel="Stylesheet" type="text/css" href="./js/jquery.timepicker.min.css">
+    <script type="text/javascript" src="./js/datepicker-ko.js?d=1"></script>
+    <script type="text/javascript" src="./js/moment.min.js?d=1"></script>
+    <script type="text/javascript" src="./js/qwebchannel.js?d=1"></script>
+    <link rel="stylesheet" type="text/css" href="style.css?d=1"/>
+    <script type="text/javascript" src="./js/common.js?d=1"></script>
+    <script type="text/javascript" src="main.js?d=1"></script>
+</head>
+<body class="manage">
+    <!-- TOP -->
+    <div class="top">
+        <img id="logo" src="./images/logo.png" alt="" class="img-top-logo">
+        <span class="top-program" id="program_name">MS-AI1000 1.0.0</span>
+        <span class="spacer"></span>
+        <div class="top-right">
+            <a href="javascript:;" id="btn_admin" class="top-menu-item blind">관리자 설정</a>
+            <a href="javascript:;" id="btn_userid" class="top-menu-item" onclick="mg.user_click_change_password()">dgkim</a>
+            <a href="login.html" id="btn_logout" class="top-menu-item">로그아웃</a>
+        </div>
+    </div>
+    <!-- CONTENTS -->
+    <div id="contents" >
+        <div class="flex_hor_wrap">
+            <!-- CONTENTS - LEFT -->
+            <div class="flex_ver_wrap camera-select-wrap">
+                <!-- CONTENTS - LEFT - CAMERA-SELECT -->
+                <div class="card camera-select">
+                    <div class="flex_hor_wrap">
+                        <div class="camera-select-control blind">
+                            <a href="javascript:;" class="camera-select-btn" id="btn_camera_add"></a>
+                            <a href="javascript:;" class="camera-select-btn remove" id="btn_camera_remove"></a>
+                        </div>
+                        <div class="camera-select-table">
+                            <div class="" style="height:360px;overflow-y:auto;margin-top: -10px;">
+                                <table class="table center table-scroll">
+                                    <colgroup>
+                                        <col style="width:40px">
+                                        <col style="width:40px">
+                                        <col style="width:100px">
+                                        <col style="width:120px">
+                                        <col style="width:160px">
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>그룹</th>
+                                        <th>이름</th>
+                                        <th>카메라 번호</th>
+                                        <th>주소</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="ctbody">
+                                        <tr>
+                                            <td><div class="camera on"></div></td>
+                                            <td>카메라1</td>
+                                            <td>camera1</td>
+                                            <td>127.0.0.1</td>
+                                            <td>1</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="mt10 ar blind">
+                                <a href="javascript:;" class="btn btn-micro btn-gray">카메라불러오기</a>
+                                <a href="javascript:;" class="btn btn-micro btn-gray">미리보기</a>
+                                <a href="javascript:;" class="btn btn-micro btn-gray">IP매칭</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="javascript:;" class="btn-refresh" style="top:2px;" onclick="mg.camera_refresh()"></a>
+                </div>
+                <!-- CONTENTS - LEFT - CAMERA-DETAIL -->
+                <div class="card camera-detail mt10">
+                    <div class="card-title">카메라 속성</div>
+                    <form name="fcamera">
+                        <table class="table">
+                        <colgroup>
+                            <col style="width:100px">
+                            <col style="width:*">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th>이름</th>
+                            <td><input type="text" name="name" value="" chk="str" msg="카메라 이름을 입력해주세요."></td>
+                        </tr>
+                        <tr>
+                            <th>카메라번호</th>
+                            <td>
+                                <!-- <select name="no" id="sel_camera_no">
+                                    <option value="Camera 1"></option>
+                                </select> -->
+                                <input type="text" name="no" value="Camera 1" chk="str" msg="카메라 no를 입력해주세요.">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>IP주소</th>
+                            <td><input type="text" name="ip" value="" chk="str" msg="IP주소 정보를 입력해주세요."></td>
+                        </tr>
+                        <tr>
+                            <th>스트리밍번호</th>
+                            <td>
+                                <select name="stream_no">
+                                    <option value="video 1" selected>Video 1</option>
+                                    <option value="video 1s2" selected>Video 2</option>
+                                    <option value="Stream 1">Stream 1</option>
+                                    <option value="Stream 2" selected>Stream 2</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>포트</th>
+                            <td><input type="text" name="port" value="" chk="str" msg="포트 정보를 입력해주세요."></td>
+                        </tr>
+                        <tr>
+                            <th>MAC주소</th>
+                            <td><input type="text" name="mac" value="" class="readonly" readonly></td>
+                        <tr>
+                            <th>사용자ID</th>
+                            <td><input type="text" name="userid" value="" chk="str" msg="사용자ID 정보를 입력해주세요."></td>
+                        </tr>
+                        <tr>
+                            <th>비밀번호</th>
+                            <td><input type="text" name="password" value="" chk="str" msg="비밀번호 정보를 입력해주세요."></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </form>
+                    <div class="mt10 flex_hor_wrap" >
+                        <a href="javascript:;" id="btn_camera_remove" onclick="mg.camera_save(13)" class="btn btn-tiny btn-red">삭제</a>
+                        <a href="javascript:;" id="btn_camera_add" onclick="mg.camera_save(11)" class="btn btn-tiny btn-white-border">추가</a>
+                        <span class="spacer"></span>
+                        <a href="javascript:;" id="btn_camera_save" onclick="mg.camera_save(12)" class="btn btn-tiny btn-green-gradient">저장</a>
+                        <a href="javascript:;" id="btn_camera_undo" onclick="mg.camera_save(14)" class="btn btn-tiny btn-white-border">되돌리기</a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- CONTENTS - RIGHT - INFORMATION -->
+            <div class="information-wrap ml10">
+                <!-- CONTENTS - RIGHT - SERVER-INFO -->
+                <div class="server-info-wrap">
+                    <div class="server-info-title"><img src="./images/ico_server.svg" alt="" class="img-icon">서버정보</div>
+                    <div class="server-info">
+                        <span class="server-info-header">이름</span>
+                        <span class="line-spacer"></span>
+                        <span id="td_svr_name" class="server-info-content">NVR</span>
+                        <span class="line-spacer"></span>
+                        <span class="server-info-header">주소</span>
+                        <span class="line-spacer"></span>
+                        <span id="td_svr_ip" class="server-info-content">117.17.159.445</span>
+                    </div>
+                </div>
+                <div class="card mt10">
+                    <!-- CONTENTS - RIGHT - INFO-NAV -->
+                    <div class="info-nav mt10">
+                        <ul class="info-nav-tab">
+                            <li><a id="tab_menu_camera" class="info-nav-tab-menu camera" href="javascript:;" onclick="mg.select_nav('camera')">Live</a></li>
+                            <li><a id="tab_menu_group" class="info-nav-tab-menu group" href="javascript:;" onclick="mg.select_nav('group')">camera</a></li>
+                            <li><a id="tab_menu_setting" class="info-nav-tab-menu setting" href="javascript:;" onclick="mg.select_nav('setting')">setting</a></li>
+                            <li><a id="tab_menu_server" class="info-nav-tab-menu server" href="javascript:;" onclick="mg.select_nav('server')">server</a></li>
+                            <li  id="li_tab_menu_manager"><a id="tab_menu_manager" class="info-nav-tab-menu manager" href="javascript:;" onclick="mg.select_nav('manager')">관리자 설정</a></li>
+                        </ul>
+                    </div>
+                    <!-- CONTENTS - RIGHT - INFO-NAV-CONTENTS -->
+                    <div class="nav-contents">
+                        <!-- CONTENTS - RIGHT - INFO-CAMERA -->
+                        <div id="tab_camera" class="tab-content camera">
+                            <div class="camera-preview-wrap">
+                                <table class="table group-camera-view grid4x4 mt30">
+                                    <tbody id="preview_tbody">
+                                    </tbody>
+                                </table>
+                                <a href="javascript:;" id="btn_preview_prev" class="btn-arrow left off" onclick="mg.preview_next(-1)"></a>
+                                <a href="javascript:;" id="btn_preview_next"  class="btn-arrow right" onclick="mg.preview_next(1)"></a>
+                                <a href="javascript:;" class="btn-refresh"  onclick="mg.camera_refresh()"></a>
+                            </div>
+                        </div>
+                        <!-- CONTENTS - RIGHT - INFO-GROUP -->
+                        <div id="tab_group" class="tab-content group">
+                            <div class="group-control">
+                                <span id="group_analysis_desc" class="group-control-desc">지능형 해석 진행중</span>
+                                <a id="group_menu_record" onclick="mg.group_click_record()" class="group-control-action record on" href="javascript:;" style="width:114px;">녹화중</a>
+                                <a id="group_menu_snapshop" onclick="mg.group_click_snapshot()" class="group-control-action snapshop" href="javascript:;">스냅샷</a>
+                            </div>
+                            <div class="group-nav">
+                                <ul id="group_nav_tab" class="group-nav-tab">
+                                    <li><a id="grp_0" class="group-nav-tab-menu on" href="javascript:;">GROUP 1</a></li>
+                                    <li><a id="grp2" class="group-nav-tab-menu" href="javascript:;"><img src="./images/ico_add.svg" alt=""></a></li>
+                                </ul>
+                            </div>
+                            <div class="group-contents">
+                                <div class="group-grid-wrap">
+                                    <a id="btn_grid_1" class="btn-group-grid" href="javascript:;" onclick="mg.group_grid_select(1)">1x1</a>
+                                    <a id="btn_grid_2" class="btn-group-grid" href="javascript:;" onclick="mg.group_grid_select(2)">2x2</a>
+                                    <a id="btn_grid_4" class="btn-group-grid" href="javascript:;" onclick="mg.group_grid_select(4)">4x4</a>
+                                </div>
+                                <div class="mt10" style="background-color:#000;">
+                                    <table id="table_group_camera_view"  class="table group-camera-view grid2x2">
+                                    </table>
+                                </div>
+                                <div id="group_camera_desc" class="group-camera-desc">
+                                    &nbsp;
+                                </div>
+                                <div class="group-camera-control">
+                                    <a id="btn_group_edit" onclick="mg.group_pop_edit()" href="javascript:;" class="btn btn-tiny btn-green-border">그룹편집</a>
+                                    <a  id="btn_group_event" onclick="mg.group_pop_event()" href="javascript:;" class="btn btn-tiny">이벤트 설정</a>
+                                    <a id="btn_group_time" onclick="mg.group_pop_time()" href="javascript:;" class="btn btn-tiny">시간 설정</a>
+                                    <span class="spacer"></span>
+                                    <a id="btn_group_analyze" onclick="mg.group_click_analysis()" href="javascript:;" class="btn btn-tiny  btn-green-gradient" style="margin-right: 0;">해석 시작</a>
+                                   
+                                </div>
+                                <a href="javascript:;" id="btn_group_prev" class="btn-arrow left off" onclick="mg.group_next(-1)"></a>
+                                <a href="javascript:;" id="btn_group_next"  class="btn-arrow right" onclick="mg.group_next(1)"></a>
+                            </div>
+                            <a href="javascript:;" class="btn-refresh"  onclick="mg.camera_refresh()"></a>
+                        </div>
+                        <!-- CONTENTS - RIGHT - INFO-SETTING -->
+                        <div id="tab_setting" class="tab-content setting" style="margin-left: -10px;">
+                            <div class="setting-wrap mt20">
+                                <div class="setting-nav">
+                                    <a id="set_menu_search" onclick="mg.setting_select('search')" class="setting-nav-tab-menu" href="javascript:;">검색</a>
+                                    <a id="set_menu_reconnect" onclick="mg.setting_select('reconnect')" class="setting-nav-tab-menu " href="javascript:;">재연결</a>
+                                    <!-- <a id="set_menu_resource" onclick="mg.setting_select('resource')" class="setting-nav-tab-menu " href="javascript:;">시스템 리소스</a> -->
+                                    <a id="set_menu_folder" onclick="mg.setting_select('folder')" class="setting-nav-tab-menu " href="javascript:;">폴더</a>
+                                    <a id="set_menu_privacy" onclick="mg.setting_select('privacy')" class="setting-nav-tab-menu " href="javascript:;">개인정보</a>
+                                    <a id="set_menu_manual" onclick="mg.setting_select('manual')" class="setting-nav-tab-menu " href="javascript:;">오프라인 매뉴얼</a>
+                                    <span class="spacer"></span>
+                                </div>
+                                <div class="setting-contents">
+                                    <div id="set_search" class="setting-tab-contents on">
+                                        <form name="fset_search">
+                                            <div class="row">
+                                                <span class="title">기간</span>
+                                                <input type="text" name="sdate" id="set_sdate" value="2023-05-23">
+                                                <input type="text" name="stime" id="set_stime" class="short" value="00:00:00">
+                                                <span class="between">~</span>
+                                                <input type="text" name="edate" id="set_edate" value="2023-05-23">
+                                                <input type="text" name="etime" id="set_etime" class="short" value="23:59:59">
+                                            </div>
+                                            <div class="row">
+                                                <span class="title">이벤트</span>
+                                                <select name="event_kind" id="event_kind">
+                                                    <option value="">모두</option>
+                                                </select>
+                                            </div>
+                                            <div class="row">
+                                                <span class="title">대상</span>
+                                                <select name="target">
+                                                    <option value="">모두</option>
+                                                    <option value="사람">사람</option>
+                                                </select>
+                                            </div>
+                                            <div class="row">
+                                                <span class="title">정렬</span>
+                                                <select name="order">
+                                                    <option value="1">시간순</option>
+                                                    <option value="-1">시간역순</option>
+                                                </select>
+                                                <a onclick="mg.setting_click_export()" href="javascript:;" class="btn btn-tiny btn-green-gradient fr ">내보내기</a>
+                                                <a onclick="mg.setting_click_remove()" href="javascript:;" class="btn btn-tiny btn-red fr ">삭제</a>
+                                                <a onclick="mg.setting_click_search()" href="javascript:;" class="btn btn-tiny btn-white-border fr">검색</a>
+                                            </div>
+                                        </form>
+                                        <div style="height:390px;overflow-y:auto;">
+                                        <table class="table border table-scroll">
+                                            <colgroup>
+                                                <col style="width:40px">
+                                                <col style="width:80px">
+                                                <col style="width:120px">
+                                                <col style="width:80px">
+                                                <col style="width:*">
+                                            </colgroup>
+                                            <thead>
+                                            <tr>
+                                                <th>번호</th>
+                                                <th>이벤트</th>
+                                                <th>카메라</th>
+                                                <th>대상</th>
+                                                <th>시간</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="set_tbody">
+                                            </tbody>
+                                        </table>
+                                        </div>
+                                        <div class="table-pagination mt10" id="search_pagination"></div>
+                                    </div>
+                                    <div id="set_reconnect" class="setting-tab-contents">
+                                        <form name="fset_reconnect">
+                                            <div class="row">
+                                                <span class="title">서버재연결</span>
+                                                <a onclick="mg.setting_click_reconnect()" href="javascript:;" class="btn btn-tiny">재연결</a>
+                                            </div>
+                                            <div class="row bg">
+                                                <input type="checkbox" name="is_use" id="ckb_reconnect">
+                                                <label class="checkbox" for="ckb_reconnect">오랫동안 프레임 못 받으면 서버에 다시 연결</label>
+                                                <input class="ml10" type="text" name="second" style="width:60px;height:21px;line-height: 21px;"> 초
+                                            </div>
+                                        </form>
+                                        <div class="mt10 ar">
+                                            <a onclick="mg.setting_save(11)" href="javascript:;" class="btn btn-tiny btn-green-gradient">저장</a>
+                                        </div>
+                                    </div>
+                                    <!-- <div id="set_resource" class="setting-tab-contents">
+                                        <form name="fset_resource">
+                                            <div class="row">
+                                                <a onclick="mg.setting_click_check_resource()" href="javascript:;" class="btn btn-tiny">시스템 리소스 확인</a>
+                                            </div>
+                                            <div class="row mt30">
+                                                <span class="title">CPU 사용량</span>
+                                                <span class="data" id="cpu_usage">&nbsp;</span>
+                                            </div>
+                                            <div class="row">
+                                                <span class="title">메모리</span>
+                                                <span class="data" id="memory">&nbsp;</span>
+
+                                            </div>
+                                            <div class="row">
+                                                <span class="title vat">GPU</span>
+                                                <div id="gpu_content" class="gpu-content">&nbsp;</div>
+                                            </div>
+                                        </form>
+                                    </div> -->
+                                    <div id="set_folder" class="setting-tab-contents">
+                                        <form name="fset_folder">
+                                            <div class="row">
+                                                <div class="record">
+                                                    <span class="title">녹화 폴더</span>
+                                                    <input type="text" name="record" chk="str" msg="녹화 폴더를 입력해주세요.">
+                                                    <a onclick="mg.setting_click_select_record_folder()" href="javascript:;" class="btn btn-tiny">선택</a>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="record">
+                                                    <span class="title">정지영상 폴더</span>
+                                                    <input type="text" name="snapshot" chk="str" msg="정지영상 폴더를 입력해주세요.">
+                                                    <a onclick="mg.setting_click_select_snapshot_folder()" href="javascript:;" class="btn btn-tiny">선택</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="mt10 ar">
+                                            <a onclick="mg.setting_save(13)" href="javascript:;" class="btn btn-tiny btn-green-gradient">저장</a>
+                                        </div>
+                                    </div>
+                                    <div id="set_privacy" class="setting-tab-contents">
+                                        <form name="fset_privacy">
+                                            <div class="row">
+                                                <div class="inf">
+                                                    <span class="title">사용자 아이디</span>
+                                                    <input type="text" name="userid" chk="str" msg="아이디를 입력해주세요.">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="inf">
+                                                    <span class="title">사용자 비밀번호</span>
+                                                    <input type="password" name="password" min="6" chk="str" msg="비밀번호(6자이상)를 입력해주세요." autocomplete="new-password">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="inf">   
+                                                    <span class="title">비밀번호 확인</span>
+                                                    <input type="password" name="repassword" min="6" chk="str" msg="비밀번호를 확인해주세요." autocomplete="new-password">
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="mt10 ar">
+                                            <a onclick="mg.setting_save(14)" href="javascript:;" class="btn btn-tiny btn-green-gradient">저장</a>
+                                        </div>
+                                    </div>
+                                    <div id="set_manual" class="setting-tab-contents">
+                                        <div class="row">
+                                            <a onclick="mg.setting_click_download_manual()" href="javascript:;" class="btn btn-tiny">매뉴얼 다운로드</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- CONTENTS - RIGHT - INFO-SERVER -->
+                        <div id="tab_server" class="tab-content server">
+                            <div class="server-wrap">
+                                <form name="fsvr">
+                                    <table class="table" style="width:310px">
+                                        <colgroup>
+                                            <col style="width:100px">
+                                            <col style="width:*">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <th>이름</th>
+                                            <td><input type="text" name="name" value="" chk="str" msg="서버 이름 정보를 입력해주세요."></td>
+                                        </tr>
+                                        <tr>
+                                            <th>사용자ID</th>
+                                            <td><input type="text" name="userid" value="" chk="str" msg="사용자ID 정보를 입력해주세요."></td>
+                                        </tr>
+                                        <tr>
+                                            <th>비밀번호</th>
+                                            <td><input type="text" name="password" value="" chk="str" msg="비밀번호 정보를 입력해주세요."></td>
+                                        </tr>
+                                        <tr>
+                                            <th>IP주소</th>
+                                            <td><input type="text" name="ip" value="" chk="str" msg="IP주소 정보를 입력해주세요."></td>
+                                        </tr>
+                                        <tr>
+                                            <th>포트</th>
+                                            <td><input type="text" name="port" value="" chk="str" msg="포트 정보를 입력해주세요."></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                                <div class="mt10 ar">
+                                    <a href="javascript:;" class="btn btn-tiny btn-green-gradient" onclick="mg.server_save()">저장</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- CONTENTS - RIGHT - INFO-manager -->
+                        <div id="tab_manager" class="tab-content manager">
+                            <div class="group-nav">
+                                <ul class="group-nav-tab">
+                                    <li><a id="mtab_license" class="group-nav-tab-menu on" href="javascript:;" onclick="mg.admin_select('license')">라이센스 설정</a></li>
+                                    <li><a id="mtab_maintenance" class="group-nav-tab-menu" href="javascript:;" onclick="mg.admin_select('maintenance')">유지관리 설정</a></li>
+                                </ul>
+                            </div>
+                            <div class="group-contents" style="width:760px;">
+                                <form name="fadmin">
+                                    <div id="mtab_contents_license" class="manager-tab-contents on">
+                                        <table class="table">
+                                            <colgroup>
+                                                <col style="width:120px">
+                                                <col style="width:*">
+                                            </colgroup>
+                                            <tr>
+                                                <th>라이센스수</th>
+                                                <td><input type="text" name="license_cnt" value="" style="width:60px;margin-left: 10px;"><span class="desc">해석을 진행하고자 하는 카메라의 대수 설정</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="vat">라이센스 종류</th>
+                                                <td>
+                                                    <div class="flex_hor_wrap">
+                                                        <div class="check-move-title">비활성 라이센스</div>
+                                                        <div class="check-move-control-wrap"></div>
+                                                        <div class="check-move-title">활성 라이센스</div>
+                                                    </div>
+                                                    <div class="flex_hor_wrap">
+                                                        <div id="admin_kind_out" class="check-move-wrap">
+                                                        </div>
+                                                        <div class="check-move-control-wrap">
+                                                            <a href="javascript:;" class="btn-check-move right" onclick="mg.admin_click_edit_move(1)"></a>
+                                                            <a href="javascript:;" class="btn-check-move left" onclick="mg.admin_click_edit_move(-1)"></a>
+                                                        </div>
+                                                        <div id="admin_kind_in" class="check-move-wrap">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div id="mtab_contents_maintenance" class="manager-tab-contents">
+                                        <table class="table">
+                                            <colgroup>
+                                                <col style="width:140px">
+                                                <col style="width:*">
+                                            </colgroup>
+                                            <tr>
+                                                <th>로고</th>
+                                                <td>
+                                                    <input type="text" name="logo" value="">
+                                                    <a href="javascript:;" class="btn btn-micro" onclick="mg.admin_click_select_logo()">찾기</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>프로그램명</th>
+                                                <td>
+                                                    <input type="text" name="program_name" value="">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>오프라인 매뉴얼</th>
+                                                <td>
+                                                    <input type="text" name="manual" value="">
+                                                    <a href="javascript:;" class="btn btn-micro" onclick="mg.admin_click_select_manual()">찾기</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>개인정보 초기화번호</th>
+                                                <td>
+                                                    <input type="text" name="init_privacy_text" id="" value="">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>펌웨어 업데이트</th>
+                                                <td>
+                                                    <input type="text" name="firmware" value="">
+                                                    <a href="javascript:;" class="btn btn-micro" onclick="mg.admin_click_select_firmware()">찾기</a>
+                                                    <a href="javascript:;" class="btn btn-micro" onclick="mg.admin_click_firmware_apply()">적용</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </form>
+                                <div class="mt10 ar">
+                                    <a href="javascript:;" class="btn btn-tiny btn-green-gradient" onclick="mg.admin_save()">저장</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+<!-- pop_group_edit -->
+<div id="pop_group_edit" class="layer_pop" style="display: none;" >
+    <div class="pop_cont">
+        <div class="card msetting">
+            <div class="card-title" id="pop_title">그룹 설정</div>
+            <div class="card-content">
+                <form name="fgroup_edit">
+                <table class="table">
+                    <colgroup>
+                        <col style="width:120px">
+                        <col style="width:*">
+                    </colgroup>
+                    <tr>
+                        <th>그룹이름</th>
+                        <td><input type="text" name="name"  value="" chk="str" msg="그룹이름을 입력해주세요.">
+                        <span class="desc ml10">그룹이름을 등록하세요.</span></td>
+                    </tr>
+                    <tr>
+                        <th>카메라</th>
+                        <td>
+                            <div class="flex_hor_wrap">
+                                <div class="check-move-title">미등록 카메라</div>
+                                <div class="check-move-control-wrap"></div>
+                                <div class="check-move-title">등록 카메라</div>
+                            </div>
+                            <div class="flex_hor_wrap">
+                                <div id="group_camera_out" class="check-move-wrap">
+                                    <label class="checkbox"><input type="checkbox" name="" checked>카메라1</label>
+                                </div>
+                                <div class="check-move-control-wrap">
+                                    <a href="javascript:;" class="btn-check-move right" onclick="mg.group_click_edit_move(1)"></a>
+                                    <a href="javascript:;" class="btn-check-move left" onclick="mg.group_click_edit_move(-1)"></a>
+                                </div>
+                                <div id="group_camera_in" class="check-move-wrap">
+
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                </form>
+                <div class="mt10 ar">
+                    <a id="btn_group_delete" onclick="mg.group_save(13)" href="javascript:;" class="btn btn-tiny btn-red fl" >삭제</a>
+                    <a id="btn_group_add" onclick="mg.group_save(11)" href="javascript:;" class="btn btn-tiny btn-green-gradient">추가</a>
+                    <a id="btn_group_save" onclick="mg.group_save(12)" href="javascript:;" class="btn btn-tiny btn-green-gradient">저장</a>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="pop_close" onclick="cm.hide_pop()"></a>
+    </div>
+</div>
+
+<!-- pop_group_event -->
+<div id="pop_group_event" class="layer_pop" style="display: none;" >
+    <div class="pop_cont">
+        <div class="card msetting">
+            <div class="card-title" id="pop_title">그룹 이벤트 설정</div>
+            <div class="card-content">
+                <form name="fgroup_event">
+                    <table class="table">
+                        <colgroup>
+                            <col style="width:120px">
+                            <col style="width:*">
+                        </colgroup>
+                        <tr>
+                            <th>카메라</th>
+                            <td>
+                                <select id="sel_group_event_camera" name="sel_group_event_camera" onchange="mg.group_event_onchange_camera()">
+                                    <option value="0">카메라 1</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>이벤트 종류</th>
+                            <td>
+                                <select  id="sel_group_event_kind" name="sel_group_event_kind" onchange="mg.group_event_onchange_kind()">
+                                    <option value="침입">침입</option>
+                                </select>
+                                <a onclick="mg.group_click_roi_add()" href="javascript:;" class="btn btn-micro ml10">ROI 추가</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>설명</th>
+                            <td>
+                                <div id="group_event_desc" class="desc">특정 영역에 객체가 진입 즉시 알람 발생</div>
+                                <div id="group_roi_wrap" class="group-roi-wrap">
+                                    <a id="btn_group_roi_0" onclick="mg.group_click_select_roi(0)" href="javascript:;" class="btn btn-micro btn-white-border">침입</a>
+                                    <a id="btn_group_roi_1" onclick="mg.group_click_select_roi(0)" href="javascript:;" class="btn btn-micro">출입확인</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                ROI
+                                <div class="roi-second-btn-wrap">
+                                    <a id="btn_second_roi_remove" onclick="mg.group_click_roi_remove()" href="javascript:;" class="btn btn-micro btn-red">ROI 삭제</a>
+                                </div>
+                            </th>
+                            <td>
+                                <canvas id="group_event_canvas" class="group_event_canvas" width="480" height="360" onclick="mg.group_event_redraw_roi(event)">
+                                </canvas>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <div class="mt10 flex_hor_wrap">
+                    <a id="btn_group_event_roi" onclick="mg.group_click_event_roi()" href="javascript:;" class="btn btn-tiny ">ROI 설정</a>
+                    <span id="group_event_roi_desc" style="display:none;" class="desc ml10">왼쪽클릭 : 점 추가, 오른쪽 클릭 : 점 삭제</span>
+                    <span class="spacer"></span>
+                    <a id="btn_group_event_close" onclick="cm.hide_pop()" href="javascript:;" class="btn btn-tiny">닫기</a>
+                    <a id="btn_group_event_save" onclick="mg.group_save(14)" href="javascript:;" class="btn btn-tiny btn-green-gradient">저장</a>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="pop_close" onclick="cm.hide_pop()"></a>
+    </div>
+</div>
+
+<!-- pop_group_time -->
+<div id="pop_group_time" class="layer_pop" style="display: none;" >
+    <div class="pop_cont">
+        <div class="card msetting">
+            <div class="card-title" id="pop_title">그룹 시간 설정</div>
+            <div class="card-content">
+                <form name="fgroup_time">
+                    <table class="table">
+                        <colgroup>
+                            <col style="width:70px">
+                            <col style="width:80px">
+                            <col style="width:70px">
+                            <col style="width:*">
+                        </colgroup>
+                        <tr>
+                            <td colspan="4">
+                                <div class="desc">지능형 해석 작동 시간을 설정하세요.</div>
+                                <div id="msetting_line_wrap" class="msetting-line-wrap">
+                                    <div class="msetting-line">
+                                        <span class="msetting-line-item">월, 화, 수</span>
+                                        <span class="msetting-line-item">17:00 ~ 24:00</span>
+                                        <a onclick="" href="javascript:;" class="btn btn-micro btn-red">삭제</a>
+                                    </div>
+                                    <div class="msetting-line">
+                                        <span class="msetting-line-item">월, 화, 수</span>
+                                        <span class="msetting-line-item">17:00 ~ 24:00</span>
+                                        <a onclick="" href="javascript:;" class="btn btn-micro btn-red">삭제</a>
+                                    </div>
+                                </div>
+                                <div class="msetting-border-line"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>요일</th>
+                            <td colspan="4">
+                                <div class="msetting-line">
+                                    <input type="checkbox" id="msetting_time1" value=1 checked>
+                                    <label class="checkbox" for="msetting_time1">월</label>
+                                    <input type="checkbox" id="msetting_time2" value=2>
+                                    <label class="checkbox" for="msetting_time2">화</label>
+                                    <input type="checkbox" id="msetting_time3" value=3>
+                                    <label class="checkbox" for="msetting_time3">수</label>
+                                    <input type="checkbox" id="msetting_time4" value=4 >
+                                    <label class="checkbox" for="msetting_time4">목</label>
+                                    <input type="checkbox" id="msetting_time5" value=5 >
+                                    <label class="checkbox" for="msetting_time5">금</label>
+                                    <input type="checkbox" id="msetting_time6" value=6 >
+                                    <label class="checkbox" for="msetting_time6">토</label>
+                                    <input type="checkbox" id="msetting_time0" value=0 >
+                                    <label class="checkbox" for="msetting_time0">일</label>
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th>시작시간</th>
+                            <td>
+                                <input type="text" name="start" id="group_time_start" chk="str" len="5" msg="시작시간은 ##:## 형태로 입력되어야 합니다.">
+                            </td>
+                            <th>종료시간</th>
+                            <td>
+                                <input type="text" name="end" id="group_time_end" chk="str" len="5" msg="종료시간은 ##:## 형태로 입력되어야 합니다.">
+                                <a onclick="mg.group_pop_time_click_add()" href="javascript:;" class="btn btn-micro btn-green ml10">추가</a>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <div class="mt10 ar">
+                    <a id="btn_group_time_save" onclick="mg.group_save(15)" href="javascript:;" class="btn btn-tiny btn-green-gradient">저장</a>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="pop_close" onclick="cm.hide_pop()"></a>
+    </div>
+</div>
+
+<div id="pop_user" class="layer_pop" style="display: none;" >
+    <div class="pop_cont" style="width:420px;">
+        <div class="card">
+            <div class="card-title" id="pop_title">비밀번호 변경</div>
+            <div class="card-content">
+                <form name="fuser">
+                    <table class="table">
+                        <colgroup>
+                            <col style="width:160px">
+                            <col style="width:*">
+                        </colgroup>
+                        <tr>
+                            <th class="">아이디</th>
+                            <td>
+                                <span id="pop_userid">admin</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="">신규 비밀번호</th>
+                            <td>
+                                <input type="password" name="password" min="6" chk="str" msg="비밀번호(6자이상)를 입력해주세요." autocomplete="new-password">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="">비밀번호 재입력</th>
+                            <td>
+                                <input type="password" name="repassword"  min="6"  chk="str" msg="비밀번호를 재입력해주세요." autocomplete="new-password">
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="mt10 ar">
+                        <a class="btn btn-tiny btn-green-gradient" href="javascript:;" onclick="mg.user_save_password()" id="btn_save">변경하기</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <a href="javascript:;" class="pop_close" onclick="cm.hide_pop()"></a>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        console.log(bw.ch);
+        if(bw.ch == null) mg.init();
+    });
+</script>

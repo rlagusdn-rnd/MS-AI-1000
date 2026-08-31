@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+*.so
+
+# 모델 가중치
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# 영상/대용량
+*.mp4
+*.avi
+*.bin
+
+# 로그/캐시
+log/
+logs/
+cache/
+runs/
+dist/
+build/
+
+# 설정/자격증명
+ai_sever_info.json
+.env
+
+.vscode/
+.idea/

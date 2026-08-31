@@ -1,0 +1,2220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Ai_Setting_Window</class>
+ <widget class="QWidget" name="Ai_Setting_Window">
+  <property name="windowModality">
+   <enum>Qt::WindowModality::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1036</width>
+    <height>690</height>
+   </rect>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">지능형 분석 설정</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="ms_ai_img.qrc">
+    <normaloff>:/newPrefix/images/icon2.png</normaloff>:/newPrefix/images/icon2.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+background-color: rgb(3, 3, 13);</string>
+  </property>
+  <widget class="QLabel" name="ai_setting_info_label">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>6</y>
+     <width>211</width>
+     <height>37</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>722</width>
+     <height>37</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>지능형 분석 카메라 설정</string>
+   </property>
+   <property name="indent">
+    <number>0</number>
+   </property>
+   <property name="openExternalLinks">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_15">
+   <property name="geometry">
+    <rect>
+     <x>516</x>
+     <y>486</y>
+     <width>255</width>
+     <height>146</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(119, 118, 123);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ico_video_off.svg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_1">
+   <property name="geometry">
+    <rect>
+     <x>6</x>
+     <y>48</y>
+     <width>255</width>
+     <height>146</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(119, 118, 123);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ico_video_off.svg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_6">
+   <property name="geometry">
+    <rect>
+     <x>261</x>
+     <y>194</y>
+     <width>255</width>
+     <height>146</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(119, 118, 123);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ico_video_off.svg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_14">
+   <property name="geometry">
+    <rect>
+     <x>261</x>
+     <y>486</y>
+     <width>255</width>
+     <height>146</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(119, 118, 123);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ico_video_off.svg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_13">
+   <property name="geometry">
+    <rect>
+     <x>6</x>
+     <y>486</y>
+     <width>255</width>
+     <height>146</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(119, 118, 123);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ico_video_off.svg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_8">
+   <property name="geometry">
+    <rect>
+     <x>771</x>
+     <y>194</y>
+     <width>255</width>
+     <height>146</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(119, 118, 123);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ico_video_off.svg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_16">
+   <property name="geometry">
+    <rect>
+     <x>771</x>
+     <y>486</y>
+     <width>255</width>
+     <height>146</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(119, 118, 123);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ico_video_off.svg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_11">
+   <property name="geometry">
+    <rect>
+     <x>516</x>
+     <y>340</y>
+     <width>255</width>
+     <height>146</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(119, 118, 123);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ico_video_off.svg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_4">
+   <property name="geometry">
+    <rect>
+     <x>771</x>
+     <y>48</y>
+     <width>255</width>
+     <height>146</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(119, 118, 123);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ico_video_off.svg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_3">
+   <property name="geometry">
+    <rect>
+     <x>516</x>
+     <y>48</y>
+     <width>255</width>
+     <height>146</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(119, 118, 123);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ico_video_off.svg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_5">
+   <property name="geometry">
+    <rect>
+     <x>6</x>
+     <y>194</y>
+     <width>255</width>
+     <height>146</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(119, 118, 123);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ico_video_off.svg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_2">
+   <property name="geometry">
+    <rect>
+     <x>261</x>
+     <y>48</y>
+     <width>255</width>
+     <height>146</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(119, 118, 123);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ico_video_off.svg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_9">
+   <property name="geometry">
+    <rect>
+     <x>6</x>
+     <y>340</y>
+     <width>255</width>
+     <height>146</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(119, 118, 123);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ico_video_off.svg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_7">
+   <property name="geometry">
+    <rect>
+     <x>516</x>
+     <y>194</y>
+     <width>255</width>
+     <height>146</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(119, 118, 123);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ico_video_off.svg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_10">
+   <property name="geometry">
+    <rect>
+     <x>261</x>
+     <y>340</y>
+     <width>255</width>
+     <height>146</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(119, 118, 123);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ico_video_off.svg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_12">
+   <property name="geometry">
+    <rect>
+     <x>771</x>
+     <y>340</y>
+     <width>255</width>
+     <height>146</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(119, 118, 123);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ico_video_off.svg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="close_bnt">
+   <property name="geometry">
+    <rect>
+     <x>958</x>
+     <y>640</y>
+     <width>71</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>71</width>
+     <height>41</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(36, 39, 44);
+color: rgb(255, 255, 255);
+border-radius: 20px;
+border: 1px solid rgba(255, 255, 255, 100);
+
+
+</string>
+   </property>
+   <property name="text">
+    <string>취소</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="camera_save_bnt">
+   <property name="geometry">
+    <rect>
+     <x>880</x>
+     <y>640</y>
+     <width>71</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>71</width>
+     <height>41</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777210</width>
+     <height>41</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+background-color: qlineargradient(spread:pad, x1:0.244, y1:0.477, x2:1, y2:0.489, stop:0.0845771 rgba(0, 205, 0, 255), stop:1 rgba(56, 188, 56, 255));
+color: rgb(255, 255, 255);
+border-radius: 20px;
+</string>
+   </property>
+   <property name="text">
+    <string>실행</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_ai_check_1">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>159</y>
+     <width>24</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ai_on.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_name_1">
+   <property name="geometry">
+    <rect>
+     <x>8</x>
+     <y>49</y>
+     <width>250</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>722</width>
+     <height>37</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumSquareRound</family>
+     <pointsize>11</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 0, 170);</string>
+   </property>
+   <property name="text">
+    <string>카메라1</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="indent">
+    <number>15</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_ai_check_2">
+   <property name="geometry">
+    <rect>
+     <x>483</x>
+     <y>159</y>
+     <width>24</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ai_on.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_name_2">
+   <property name="geometry">
+    <rect>
+     <x>264</x>
+     <y>49</y>
+     <width>250</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>722</width>
+     <height>37</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumSquareRound</family>
+     <pointsize>11</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 0, 170);</string>
+   </property>
+   <property name="text">
+    <string>카메라2</string>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="indent">
+    <number>15</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_ai_check_3">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>159</y>
+     <width>24</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ai_on.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_name_3">
+   <property name="geometry">
+    <rect>
+     <x>519</x>
+     <y>51</y>
+     <width>250</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>722</width>
+     <height>37</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumSquareRound</family>
+     <pointsize>11</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 0, 170);</string>
+   </property>
+   <property name="text">
+    <string>카메라3</string>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="indent">
+    <number>15</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_ai_check_4">
+   <property name="geometry">
+    <rect>
+     <x>993</x>
+     <y>159</y>
+     <width>24</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ai_on.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_name_4">
+   <property name="geometry">
+    <rect>
+     <x>773</x>
+     <y>51</y>
+     <width>250</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>722</width>
+     <height>37</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumSquareRound</family>
+     <pointsize>11</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 0, 170);</string>
+   </property>
+   <property name="text">
+    <string>카메라4</string>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="indent">
+    <number>15</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_ai_check_5">
+   <property name="geometry">
+    <rect>
+     <x>229</x>
+     <y>305</y>
+     <width>24</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ai_on.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_name_5">
+   <property name="geometry">
+    <rect>
+     <x>8</x>
+     <y>195</y>
+     <width>250</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>722</width>
+     <height>37</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumSquareRound</family>
+     <pointsize>11</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 0, 170);</string>
+   </property>
+   <property name="text">
+    <string>카메라5</string>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="indent">
+    <number>15</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_ai_check_6">
+   <property name="geometry">
+    <rect>
+     <x>484</x>
+     <y>305</y>
+     <width>24</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ai_on.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_name_6">
+   <property name="geometry">
+    <rect>
+     <x>264</x>
+     <y>195</y>
+     <width>250</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>722</width>
+     <height>37</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumSquareRound</family>
+     <pointsize>11</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 0, 170);</string>
+   </property>
+   <property name="text">
+    <string>카메라6</string>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="indent">
+    <number>15</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_ai_check_7">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>305</y>
+     <width>24</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ai_on.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_name_7">
+   <property name="geometry">
+    <rect>
+     <x>519</x>
+     <y>195</y>
+     <width>250</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>722</width>
+     <height>37</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumSquareRound</family>
+     <pointsize>11</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 0, 170);</string>
+   </property>
+   <property name="text">
+    <string>카메라7</string>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="indent">
+    <number>15</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_ai_check_8">
+   <property name="geometry">
+    <rect>
+     <x>993</x>
+     <y>305</y>
+     <width>24</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ai_on.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_name_8">
+   <property name="geometry">
+    <rect>
+     <x>773</x>
+     <y>195</y>
+     <width>250</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>722</width>
+     <height>37</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumSquareRound</family>
+     <pointsize>11</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 0, 170);</string>
+   </property>
+   <property name="text">
+    <string>카메라8</string>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="indent">
+    <number>15</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_ai_check_9">
+   <property name="geometry">
+    <rect>
+     <x>228</x>
+     <y>451</y>
+     <width>24</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ai_on.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_name_9">
+   <property name="geometry">
+    <rect>
+     <x>8</x>
+     <y>341</y>
+     <width>250</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>722</width>
+     <height>37</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumSquareRound</family>
+     <pointsize>11</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 0, 170);</string>
+   </property>
+   <property name="text">
+    <string>카메라9</string>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="indent">
+    <number>15</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_ai_check_10">
+   <property name="geometry">
+    <rect>
+     <x>486</x>
+     <y>451</y>
+     <width>24</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ai_on.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_name_10">
+   <property name="geometry">
+    <rect>
+     <x>264</x>
+     <y>341</y>
+     <width>250</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>722</width>
+     <height>37</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumSquareRound</family>
+     <pointsize>11</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 0, 170);</string>
+   </property>
+   <property name="text">
+    <string>카메라10</string>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="indent">
+    <number>15</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_ai_check_11">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>451</y>
+     <width>24</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ai_on.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_name_11">
+   <property name="geometry">
+    <rect>
+     <x>519</x>
+     <y>341</y>
+     <width>250</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>722</width>
+     <height>37</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumSquareRound</family>
+     <pointsize>11</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 0, 170);</string>
+   </property>
+   <property name="text">
+    <string>카메라11</string>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="indent">
+    <number>15</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_name_12">
+   <property name="geometry">
+    <rect>
+     <x>773</x>
+     <y>341</y>
+     <width>250</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>722</width>
+     <height>37</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumSquareRound</family>
+     <pointsize>11</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 0, 170);</string>
+   </property>
+   <property name="text">
+    <string>카메라12</string>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="indent">
+    <number>15</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_ai_check_12">
+   <property name="geometry">
+    <rect>
+     <x>993</x>
+     <y>451</y>
+     <width>24</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ai_on.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_ai_check_13">
+   <property name="geometry">
+    <rect>
+     <x>228</x>
+     <y>597</y>
+     <width>24</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ai_on.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_name_13">
+   <property name="geometry">
+    <rect>
+     <x>8</x>
+     <y>487</y>
+     <width>250</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>722</width>
+     <height>37</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumSquareRound</family>
+     <pointsize>11</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 0, 170);</string>
+   </property>
+   <property name="text">
+    <string>카메라13</string>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="indent">
+    <number>15</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_ai_check_14">
+   <property name="geometry">
+    <rect>
+     <x>485</x>
+     <y>597</y>
+     <width>24</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ai_on.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_name_14">
+   <property name="geometry">
+    <rect>
+     <x>264</x>
+     <y>487</y>
+     <width>250</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>722</width>
+     <height>37</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumSquareRound</family>
+     <pointsize>11</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 0, 170);</string>
+   </property>
+   <property name="text">
+    <string>카메라14</string>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="indent">
+    <number>15</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_ai_check_15">
+   <property name="geometry">
+    <rect>
+     <x>739</x>
+     <y>597</y>
+     <width>24</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ai_on.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_name_15">
+   <property name="geometry">
+    <rect>
+     <x>519</x>
+     <y>487</y>
+     <width>250</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>722</width>
+     <height>37</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumSquareRound</family>
+     <pointsize>11</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 0, 170);</string>
+   </property>
+   <property name="text">
+    <string>카메라15</string>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="indent">
+    <number>15</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_name_16">
+   <property name="geometry">
+    <rect>
+     <x>773</x>
+     <y>487</y>
+     <width>250</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>722</width>
+     <height>37</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumSquareRound</family>
+     <pointsize>11</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 0, 170);</string>
+   </property>
+   <property name="text">
+    <string>카메라16</string>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="indent">
+    <number>15</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="camera_view_ai_check_16">
+   <property name="geometry">
+    <rect>
+     <x>994</x>
+     <y>597</y>
+     <width>24</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="ms_ai_img.qrc">:/newPrefix/images/ai_on.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="all_select_bnt">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>7</y>
+     <width>71</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>17</width>
+     <height>25</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>NanumBarunGothic</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(36, 39, 44);
+color: rgb(255, 255, 255);
+border-radius: 13px;
+border: 1px solid rgba(255, 255, 255, 100);
+
+
+</string>
+   </property>
+   <property name="text">
+    <string>모두 선택</string>
+   </property>
+  </widget>
+  <zorder>ai_setting_info_label</zorder>
+  <zorder>camera_view_15</zorder>
+  <zorder>camera_view_1</zorder>
+  <zorder>camera_view_6</zorder>
+  <zorder>camera_view_14</zorder>
+  <zorder>camera_view_13</zorder>
+  <zorder>camera_view_8</zorder>
+  <zorder>camera_view_16</zorder>
+  <zorder>camera_view_11</zorder>
+  <zorder>camera_view_4</zorder>
+  <zorder>camera_view_3</zorder>
+  <zorder>camera_view_5</zorder>
+  <zorder>camera_view_2</zorder>
+  <zorder>camera_view_9</zorder>
+  <zorder>camera_view_7</zorder>
+  <zorder>camera_view_10</zorder>
+  <zorder>camera_view_12</zorder>
+  <zorder>close_bnt</zorder>
+  <zorder>camera_save_bnt</zorder>
+  <zorder>camera_view_ai_check_10</zorder>
+  <zorder>camera_view_ai_check_9</zorder>
+  <zorder>camera_view_ai_check_4</zorder>
+  <zorder>camera_view_ai_check_2</zorder>
+  <zorder>camera_view_ai_check_8</zorder>
+  <zorder>camera_view_ai_check_12</zorder>
+  <zorder>camera_view_ai_check_11</zorder>
+  <zorder>camera_view_ai_check_16</zorder>
+  <zorder>camera_view_ai_check_13</zorder>
+  <zorder>camera_view_ai_check_6</zorder>
+  <zorder>camera_view_ai_check_15</zorder>
+  <zorder>camera_view_ai_check_7</zorder>
+  <zorder>camera_view_ai_check_5</zorder>
+  <zorder>camera_view_ai_check_1</zorder>
+  <zorder>camera_view_ai_check_3</zorder>
+  <zorder>camera_view_ai_check_14</zorder>
+  <zorder>camera_view_name_4</zorder>
+  <zorder>camera_view_name_6</zorder>
+  <zorder>camera_view_name_7</zorder>
+  <zorder>camera_view_name_3</zorder>
+  <zorder>camera_view_name_5</zorder>
+  <zorder>camera_view_name_13</zorder>
+  <zorder>camera_view_name_15</zorder>
+  <zorder>camera_view_name_14</zorder>
+  <zorder>camera_view_name_12</zorder>
+  <zorder>camera_view_name_8</zorder>
+  <zorder>camera_view_name_9</zorder>
+  <zorder>camera_view_name_1</zorder>
+  <zorder>camera_view_name_2</zorder>
+  <zorder>camera_view_name_10</zorder>
+  <zorder>camera_view_name_11</zorder>
+  <zorder>camera_view_name_16</zorder>
+  <zorder>all_select_bnt</zorder>
+ </widget>
+ <resources>
+  <include location="ms_ai_img.qrc"/>
+ </resources>
+ <connections/>
+</ui>

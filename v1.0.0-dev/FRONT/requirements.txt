@@ -1,0 +1,7 @@
+numpy==1.23.4
+opencv-python==4.6.0.66
+PyQt6==6.4.0
+PyQt6-Qt6==6.4.0
+PyQt6-sip==13.4.0
+PyQt6-WebEngine==6.4.0
+PyQt6-WebEngine-Qt6==6.4.0
