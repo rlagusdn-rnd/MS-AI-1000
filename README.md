@@ -57,19 +57,29 @@ NVR/RTSP 다채널 영상에서 **배회·침입·쓰러짐·싸움 등 이상�
 ## 기술적 구현 및 문제 해결
 
 ### 1. RTSP 프레임 지연 해소 — 수집 계층 재설계
+
+```python
+# back/ms_ai_main.py
+"rtspsrc location={url} latency=30 drop-on-latency=true "
+"! application/x-rtp,media=video,encoding-name=H264 "
+"! rtph264depay ! h264parse ! nvh264dec "
+"! videoscale ! video/x-raw,width=640,height=480 "
+"! videoconvert ! video/x-raw,format=BGR "
+"! appsink sync=false max-buffers=3 drop=true"
 ```
+
 **문제**
 Opencv기반 디코딩 방식은 프레임을 FIFO 큐에 쌓고 가장 오래된 1장을 반환 -> 실시간 다채널 환경에서 아래 문제 발생
 - 지연 누적 : 추론속도가 입력 속도(30fps)보다 느릴경우 지연이 누적됨 
 
 **해결**
 GStreamer 활용
--> 오래된 프레임 폐기 & 비동기적 방법 활용 (지연 누적 해결)
--> GPU 디코딩 (nvh264dec)으로 CPU 부하 제거
+- 오래된 프레임 폐기 & 비동기적 방법 활용 (지연 누적 해결)
+- GPU 디코딩 (nvh264dec)으로 CPU 부하 제거
 
 **결과**
 16채널 CCTV 실시간 입력·분석 구현
-```
+
 
 ## 주요 구성 (v1.7.0-dev)
 
