@@ -81,8 +81,8 @@ GStreamer 활용
 16채널 CCTV 실시간 입력·분석 구현
 
 
-## 주요 구성 (v1.7.0-dev)
-
+## 프로젝트 구조
+```
 MS-AI-1000/v1.7.0-dev/
 ├── main.py                 # FastAPI 메인 서버 (REST API, 스케줄러)
 ├── AI_core_main.py         # VLM/SAM2 AI 코어 서버
@@ -97,6 +97,7 @@ MS-AI-1000/v1.7.0-dev/
 │   ├── HAR.py              # 사람 정보 관리 (Human Action Recognition)
 │   └── utils.py            # 백엔드 유틸리티
 └── cache/                  # 설정 파일 (암호화된 JSON)
+```
 
 ## 탐지 이벤트
 
