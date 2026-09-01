@@ -6,9 +6,12 @@ NVR/RTSP 다채널 영상에서 **배회·침입·쓰러짐·싸움 등 이상�
 
 ## 역할 및 참여범위
 
-3인 팀 프로젝트로 RTSP 기반 카메라 입출력 파이프라인, 행동 탐지 파이프라인 구현, 평가 및 검증 담당
+RTSP 기반 카메라 입출력 파이프라인, 행동 탐지 파이프라인, 평가 및 검증 담당
 사내 서버PC에서 작업 후 일괄 업로드하는 방식으로 협업 수행
 
+- **RTSP 수집 계층** — GStreamer 파이프라인, 16채널 실시간 입력 안정화
+- **행동 탐지 파이프라인** — 이미지-텍스트 유사도 기반 행동 분류 (낙상, 싸움 등)
+- **평가/검증** — 성능 평가, KISA 인증 대응
 
 ---
 
@@ -54,13 +57,32 @@ NVR/RTSP 다채널 영상에서 **배회·침입·쓰러짐·싸움 등 이상�
 └────────────────────────────────────────────────────────────────────┘
 ```
 ## 핵심 기능
-### 실시간 이상행동 탐지
-침입 감지 : ROI 영역 3초 이상 체류 시 알림
-배회 감지 : ROI 영역 10초 이상 체류 시 알림          
-쓰러짐 감지 : SigLip 유사도 + 정지 상태 분석          
-싸움 감지 : SigLip 유사도 + VLM 이중 검증           
-화재 감지 : 화염 bbox 30초 지속 + 30회 누적         
-쓰레기 투기 : ROI 진입/이탈 시 SAM2 변화 감지        
+### 1. 실시간 이상행동 탐지
+```
+- 침입 감지 : ROI 영역 3초 이상 체류 시 알림
+- 배회 감지 : ROI 영역 10초 이상 체류 시 알림          
+- 쓰러짐 감지 : SigLip 유사도 + 정지 상태 분석          
+- 싸움 감지 : SigLip 유사도 + VLM 이중 검증           
+- 화재 감지 : 화염 bbox 30초 지속 + 30회 누적         
+- 쓰레기 투기 : ROI 진입/이탈 시 SAM2 변화 감지        
+```
+
+### 2. 멀티 채널 실시간 처리
+```python
+# 프로세스당 최대 4개 카메라 병렬 처리
+# BaseManager를 통한 프로세스 간 안전한 데이터 공유
+class SharedAIData:
+    """멀티프로세스 간 AI 분석 결과를 공유하기 위한 클래스"""
+    def __init__(self):
+        self._data = {}
+    def set(self, data): self._data = data
+    def get(self): return self._data 
+```
+
+### 3. 자동 라벨링 & 자가 학습
+```
+NVR 이벤트 영상 -> YOLO 라벨 -> Zero-shot 라벨 -> VLM 검증 -> SAM2 정제 -> 데이터셋 저장 -> 자동 학습
+```
 
 
 ## 기술적 구현 및 문제 해결
@@ -77,18 +99,30 @@ NVR/RTSP 다채널 영상에서 **배회·침입·쓰러짐·싸움 등 이상�
 "! appsink sync=false max-buffers=3 drop=true"
 ```
 
-**문제**
-: Opencv기반 디코딩 방식은 프레임을 FIFO 큐에 쌓고 가장 오래된 1장을 반환 -> 실시간 다채널 환경에서 아래 문제 발생
-- 지연 누적 : 추론속도가 입력 속도(30fps)보다 느릴경우 지연이 누적됨 
-
-**해결**
-: GStreamer 활용
+**특징**
+: GStreamer 기반 실시간 입력 구현
 - 오래된 프레임 폐기 & 비동기적 방법 활용 (지연 누적 해결)
 - GPU 디코딩 (nvh264dec)으로 CPU 부하 제거
 
-**결과**
-: 16채널 CCTV 실시간 입력·분석 구현
 
+### 2. SigLip 텍스트 임베딩 사전 계산으로 추론 속도 최적화
+
+```python
+def precompute_text_embeddings():
+    """텍스트 임베딩을 한 번만 계산하여 캐싱"""
+    falldown_text_embeds = siglip_model.get_text_features(**falldown_inputs)
+    falldown_text_embeds = falldown_text_embeds / falldown_text_embeds.norm(p=2, dim=-1, keepdim=True)
+    siglip_text_embeddings["falldown"] = {"embeddings": falldown_text_embeds}
+```
+
+### 3. Watchdog 패턴으로 RTSP 스트림 안정성 확보
+
+```python
+def check_watchdog(self):
+    elapsed = time.time() - self.last_frame_time
+    if elapsed > self.timeout_sec:  # 10초 타임아웃
+        self.restart()  # 자동 재연결
+```
 
 ## 프로젝트 구조
 ```
